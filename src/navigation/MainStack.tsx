@@ -2,7 +2,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import { useColorScheme } from 'react-native';
-import { Colors } from '@/constants/theme';
+import { Colors } from '../../constants/theme';
+import HomeScreen from '../features/home/HomeScreen';
 import AddStopsScreen from '../features/booking/AddStopsScreen';
 import BookERickshawScreen from '../features/booking/BookERickshawScreen';
 import ConfirmRideScreen from '../features/booking/ConfirmRideScreen';
@@ -25,6 +26,7 @@ const MainStack = () => {
 
   return (
     <Stack.Navigator
+      initialRouteName="Home"
       screenOptions={{
         headerStyle: { backgroundColor: theme.surface },
         headerTintColor: theme.text,
@@ -33,17 +35,33 @@ const MainStack = () => {
       }}
     >
       <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
         name="BookERickshaw"
         component={BookERickshawScreen}
         options={{ headerShown: false }}
-        initialParams={undefined}
       />
       <Stack.Screen
         name="Pickup"
         component={PickupScreen}
-        options={{ headerShown: false }}
+        options={{ 
+          title: 'Set pickup location',
+          headerShown: true,
+          headerBackTitle: 'Back'
+        }}
       />
-      <Stack.Screen name="Drop" component={DropScreen} options={{ headerShown: false }} />
+      <Stack.Screen 
+        name="Drop" 
+        component={DropScreen} 
+        options={{ 
+          title: 'Where to?',
+          headerShown: true,
+          headerBackTitle: 'Back'
+        }} 
+      />
       <Stack.Screen
         name="ScheduleRide"
         component={ScheduleRideScreen}
@@ -57,7 +75,11 @@ const MainStack = () => {
       <Stack.Screen
         name="FareEstimate"
         component={FareEstimate}
-        options={{ headerShown: false }}
+        options={{ 
+          title: 'Choose a ride',
+          headerShown: true,
+          headerBackTitle: 'Back'
+        }}
       />
       <Stack.Screen
         name="ConfirmRide"

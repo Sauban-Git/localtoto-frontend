@@ -7,12 +7,24 @@ export type AuthStackParamList = {
 };
 
 export type MainStackParamList = {
+  // Main screens
+  Home: undefined;
   BookERickshaw: undefined;
-  Pickup: undefined;
-  Drop: undefined;
+  
+  // Ride booking flow
+  Pickup: { destination?: string } | undefined;
+  Drop: { pickupLocation?: string } | undefined;
+  Solo: undefined;
+  Sharing: undefined;
+  Rentals: undefined;
+  
+  // Existing ride flow
   ScheduleRide: undefined;
   AddStops: undefined;
-  FareEstimate: undefined;
+  FareEstimate: {
+    pickup: string;
+    dropoff: string;
+  };
   ConfirmRide: {
     rideId: string;
     driverName: string;
@@ -26,5 +38,10 @@ export type MainStackParamList = {
   Payment: undefined;
   Rating: { driverName?: string; rideId?: string } | undefined;
   CancelRide: undefined;
+  
+  // Other
+  Map: undefined;
+  Wallet: undefined;
+  Profile: undefined;
 };
 

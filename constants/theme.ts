@@ -7,21 +7,24 @@ import { DarkTheme, DefaultTheme, Theme } from '@react-navigation/native';
 import { Platform } from 'react-native';
 
 export const palette = {
-  primary: '#22C55E', // Medium green - main brand color
-  primaryDark: '#16A34A', // Darker green for hover/pressed states
-  primaryDarker: '#15803D', // Even darker for emphasis
-  headerGreen: '#0A5D2C', // Dark green for headers (matching images)
-  lightGreen: '#86EFAC', // Light green for backgrounds
-  secondary: '#D1FAE5', // Light green background
-  background: '#FFFFFF', // Pure white background
-  surface: '#FFFFFF', // White cards/surfaces
-  surfaceAlt: '#F0FDF4', // Very light green tint for alternate surfaces
-  text: '#000000', // Black text for contrast
-  textMuted: '#6B7280', // Gray for secondary text
-  border: '#22C55E', // Green borders (matching images)
-  gray: '#9CA3AF', // Medium gray
-  warning: '#F59E0B',
-  danger: '#EF4444',
+  // Dark green theme colors
+  primary: '#0A5D2C',         // Dark green - main brand color (from header)
+  primaryDark: '#064423',     // Darker green for hover/pressed states
+  primaryDarker: '#042F15',   // Even darker for emphasis
+  headerGreen: '#0A5D2C',     // Dark green for headers (from screenshot)
+  lightGreen: '#E8F5E9',      // Very light green for backgrounds
+  secondary: '#4CAF50',       // Medium green for secondary elements
+  background: '#FFFFFF',      // White background
+  surface: '#F5F5F5',         // Light gray background for cards/surfaces
+  surfaceAlt: '#E8F5E9',      // Very light green tint for alternate surfaces
+  text: '#1B5E20',           // Dark green text (from screenshot)
+  textMuted: '#4CAF50',       // Medium green for secondary text
+  border: '#C8E6C9',          // Light green border
+  gray: '#9E9E9E',            // Medium gray
+  warning: '#FFA000',         // Amber for warnings
+  danger: '#D32F2F',          // Red for errors/danger
+  white: '#FFFFFF',           // Pure white
+  black: '#000000',           // Pure black
 };
 
 type ColorTokens = {
